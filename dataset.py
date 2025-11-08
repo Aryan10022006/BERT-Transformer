@@ -133,13 +133,13 @@ class BertPretrainingDataset(Dataset):
         
         for idx in masked_indices:
             labels[idx] = masked_ids[idx]
-            
+
             prob = random.random()
+
             if prob < 0.8:
                 masked_ids[idx] = self.tokenizer.mask_token_id
             elif prob < 0.9:
                 masked_ids[idx] = random.randint(0, self.tokenizer.vocab_size - 1)
-            #else: 10% chance, leave it unchanged
             
         return masked_ids, labels
     

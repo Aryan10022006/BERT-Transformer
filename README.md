@@ -1,6 +1,6 @@
 # BERT from Scratch for NLP Selection Camp
 
-built this for the Inter IIT Tech Meet 14.0 NLP selection bootcamp. had to implement BERT completely from scratch using pytorch - no pre-built transformers allowed, just raw pytorch layers and patience.
+built this for the Inter IIT Tech Meet 14., Nlp Selection bootcamp where I had to implement BERT completely from scratch using pytorch - no pre-built transformers allowed, just raw pytorch layers and patience.
 
 ## what's implemented
 
@@ -76,15 +76,33 @@ parameters set for my local config (16gb ram, rtx gpu). adjust batch_size in tra
 training converges, NSP accuracy hits ~58% (above random), MLM predictions make sense:
 
 ```
+Epoch 3 Summary:
+  Training Loss: 7.5916
+  Validation Loss: 7.6399
+  Validation NSP Accuracy: 66.15%
+✓ New best model saved to checkpoints\best_model.pth
+
+Training finished, running demo
+
 Predicting for: 'The capital of France is [MASK].'
-  1. paris
-  2. located  
-  3. called
+  1. the
+  2. ,
+  3. of
+  4. in
+  5. to
 
 Predicting for: 'The [MASK] is shining brightly today.'
-  1. sun
-  2. moon
-  3. light
+  1. the
+  2. ,
+  3. of
+  4. was
+  5. to
+Predicting for: 'He went to the [MASK] to buy some milk.'
+  1. the
+  2. ,
+  3. of
+  4. to
+  5. in
 ```
 
 model checkpoint saved to `checkpoints/best_model.pth`.

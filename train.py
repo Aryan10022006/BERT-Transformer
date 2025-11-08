@@ -50,6 +50,7 @@ class BertTrainer:
             loss = mlm_loss + nsp_loss
             
             loss.backward()
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), 1.0) 
             
             #applying fixes
             self.optimizer.step()
